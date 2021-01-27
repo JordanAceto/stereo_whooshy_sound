@@ -24,4 +24,15 @@ F 3 "~" H 1800 1500 50  0001 C CNN
 	1    1800 1500
 	-1   0    0    -1  
 $EndComp
+$Comp
+L Regulator_Linear:TLV1117-33 U8
+U 1 1 5FBA754B
+P 4450 1550
+F 0 "U8" H 4450 1792 50  0000 C CNN
+F 1 "TLV1117-33" H 4450 1701 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-223-3_TabPin2" H 4450 1550 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/tlv1117.pdf" H 4450 1550 50  0001 C CNN
+	1    4450 1550
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

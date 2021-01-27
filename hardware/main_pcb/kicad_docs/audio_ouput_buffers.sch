@@ -22,21 +22,21 @@ buffered_wet_audio_A
 Text HLabel 4250 3000 2    50   Output ~ 0
 buffered_wet_audio_B
 $Comp
-L Amplifier_Operational:TL072 U4
-U 1 1 5FB93194
+L Amplifier_Operational:TL072 U1
+U 2 1 5FB93194
 P 4100 4500
-F 0 "U4" H 4100 4867 50  0000 C CNN
+F 0 "U1" H 4100 4867 50  0000 C CNN
 F 1 "TL072" H 4100 4776 50  0000 C CNN
 F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 4100 4500 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/tl071.pdf" H 4100 4500 50  0001 C CNN
-	1    4100 4500
+	2    4100 4500
 	1    0    0    -1  
 $EndComp
 $Comp
-L Amplifier_Operational:TL072 U4
+L Amplifier_Operational:TL072 U2
 U 2 1 5FB93A33
 P 6750 4600
-F 0 "U4" H 6750 4967 50  0000 C CNN
+F 0 "U2" H 6750 4967 50  0000 C CNN
 F 1 "TL072" H 6750 4876 50  0000 C CNN
 F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 6750 4600 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/tl071.pdf" H 6750 4600 50  0001 C CNN

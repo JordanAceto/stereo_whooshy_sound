@@ -33,14 +33,14 @@ F 3 "http://www.ti.com/lit/ds/symlink/tl071.pdf" H 5750 3700 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Amplifier_Operational:TL072 U1
-U 2 1 5FB91EDA
+L Amplifier_Operational:TL072 U2
+U 1 1 5FB91EDA
 P 6400 4850
-F 0 "U1" H 6400 5217 50  0000 C CNN
+F 0 "U2" H 6400 5217 50  0000 C CNN
 F 1 "TL072" H 6400 5126 50  0000 C CNN
 F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 6400 4850 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/tl071.pdf" H 6400 4850 50  0001 C CNN
-	2    6400 4850
+	1    6400 4850
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC

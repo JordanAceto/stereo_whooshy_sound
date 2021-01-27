@@ -64,107 +64,33 @@ F4 "buffered_wet_audio_A" O R 10000 1650 50
 F5 "buffered_wet_audio_B" O R 10000 1800 50 
 $EndSheet
 $Comp
-L Connector_Generic:Conn_01x02 J9
-U 1 1 5FB8912F
-P 750 1650
-F 0 "J9" H 668 1867 50  0000 C CNN
-F 1 "audio_in_A" H 668 1776 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 750 1650 50  0001 C CNN
-F 3 "~" H 750 1650 50  0001 C CNN
-	1    750  1650
+L Connector_Generic:Conn_01x03 J9
+U 1 1 5FBA986C
+P 850 1150
+F 0 "J9" H 768 1467 50  0000 C CNN
+F 1 "IO_A" H 768 1376 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 850 1150 50  0001 C CNN
+F 3 "~" H 850 1150 50  0001 C CNN
+	1    850  1150
 	-1   0    0    -1  
 $EndComp
 $Comp
-L Connector_Generic:Conn_01x02 J10
-U 1 1 5FB89C6A
-P 750 2400
-F 0 "J10" H 668 2617 50  0000 C CNN
-F 1 "audio_in_B" H 668 2526 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 750 2400 50  0001 C CNN
-F 3 "~" H 750 2400 50  0001 C CNN
-	1    750  2400
+L Connector_Generic:Conn_01x03 J10
+U 1 1 5FBA9F9C
+P 850 2000
+F 0 "J10" H 768 2317 50  0000 C CNN
+F 1 "IO_B" H 768 2226 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 850 2000 50  0001 C CNN
+F 3 "~" H 850 2000 50  0001 C CNN
+	1    850  2000
 	-1   0    0    -1  
 $EndComp
-$Comp
-L power:GND #PWR01
-U 1 1 5FB8A139
-P 1050 1850
-F 0 "#PWR01" H 1050 1600 50  0001 C CNN
-F 1 "GND" H 1055 1677 50  0000 C CNN
-F 2 "" H 1050 1850 50  0001 C CNN
-F 3 "" H 1050 1850 50  0001 C CNN
-	1    1050 1850
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	1050 1850 1050 1750
-Wire Wire Line
-	1050 1750 950  1750
-$Comp
-L power:GND #PWR02
-U 1 1 5FB8AD56
-P 1050 2600
-F 0 "#PWR02" H 1050 2350 50  0001 C CNN
-F 1 "GND" H 1055 2427 50  0000 C CNN
-F 2 "" H 1050 2600 50  0001 C CNN
-F 3 "" H 1050 2600 50  0001 C CNN
-	1    1050 2600
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	1050 2600 1050 2500
-Wire Wire Line
-	1050 2500 950  2500
-$Comp
-L Connector_Generic:Conn_01x02 J11
-U 1 1 5FB8D888
-P 11000 1650
-F 0 "J11" H 10950 1900 50  0000 L CNN
-F 1 "audio_out_A" H 10750 1800 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 11000 1650 50  0001 C CNN
-F 3 "~" H 11000 1650 50  0001 C CNN
-	1    11000 1650
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector_Generic:Conn_01x02 J12
-U 1 1 5FB8D88E
-P 11000 2400
-F 0 "J12" H 10950 2650 50  0000 L CNN
-F 1 "audio_out_B" H 10750 2550 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 11000 2400 50  0001 C CNN
-F 3 "~" H 11000 2400 50  0001 C CNN
-	1    11000 2400
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR021
-U 1 1 5FB8D894
-P 10700 1850
-F 0 "#PWR021" H 10700 1600 50  0001 C CNN
-F 1 "GND" H 10705 1677 50  0000 C CNN
-F 2 "" H 10700 1850 50  0001 C CNN
-F 3 "" H 10700 1850 50  0001 C CNN
-	1    10700 1850
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	10700 1850 10700 1750
-Wire Wire Line
-	10700 1750 10800 1750
-$Comp
-L power:GND #PWR022
-U 1 1 5FB8D89C
-P 10700 2600
-F 0 "#PWR022" H 10700 2350 50  0001 C CNN
-F 1 "GND" H 10705 2427 50  0000 C CNN
-F 2 "" H 10700 2600 50  0001 C CNN
-F 3 "" H 10700 2600 50  0001 C CNN
-	1    10700 2600
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	10700 2600 10700 2500
-Wire Wire Line
-	10700 2500 10800 2500
+Text Label 1050 1050 0    50   ~ 0
+audio_in_A
+Text Label 1050 1150 0    50   ~ 0
+audio_out_A
+Text Label 1050 1900 0    50   ~ 0
+audio_in_B
+Text Label 1050 2000 0    50   ~ 0
+audio_out_B
 $EndSCHEMATC
