@@ -3,9 +3,9 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 3 12
+Sheet 2 11
 Title "Stereo Whooshy Sound"
-Date "2020-11-20"
+Date "2021-08-07"
 Rev "0"
 Comp ""
 Comment1 "creativecommons.org/licenses/by/4.0/"
@@ -13,34 +13,186 @@ Comment2 "License: CC by 4.0"
 Comment3 "Author: Jordan Aceto"
 Comment4 ""
 $EndDescr
-Text HLabel 2000 2000 0    50   Input ~ 0
-raw_audio_in_A
-Text HLabel 2000 2500 0    50   Input ~ 0
-raw_audio_in_B
-Text HLabel 3000 2000 2    50   Output ~ 0
-buffered_dry_audio_A
-Text HLabel 3000 2500 2    50   Output ~ 0
-buffered_dry_audio_B
+Text HLabel 6650 2650 2    50   Output ~ 0
+buffered_dry_out_A
+Text HLabel 6650 4200 2    50   Output ~ 0
+buffered_dry_out_B
 $Comp
-L Amplifier_Operational:TL072 U1
-U 1 1 5FB919FA
-P 5750 3700
-F 0 "U1" H 5750 4067 50  0000 C CNN
-F 1 "TL072" H 5750 3976 50  0000 C CNN
-F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 5750 3700 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/tl071.pdf" H 5750 3700 50  0001 C CNN
-	1    5750 3700
+L Device:R R1
+U 1 1 6100E95A
+P 4600 2850
+F 0 "R1" H 4670 2896 50  0000 L CNN
+F 1 "2M2" H 4670 2805 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 4530 2850 50  0001 C CNN
+F 3 "~" H 4600 2850 50  0001 C CNN
+	1    4600 2850
 	1    0    0    -1  
 $EndComp
 $Comp
-L Amplifier_Operational:TL072 U2
-U 1 1 5FB91EDA
-P 6400 4850
-F 0 "U2" H 6400 5217 50  0000 C CNN
-F 1 "TL072" H 6400 5126 50  0000 C CNN
-F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 6400 4850 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/tl071.pdf" H 6400 4850 50  0001 C CNN
-	1    6400 4850
+L Device:R R2
+U 1 1 6100F124
+P 5200 2850
+F 0 "R2" H 5270 2896 50  0000 L CNN
+F 1 "2M2" H 5270 2805 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 5130 2850 50  0001 C CNN
+F 3 "~" H 5200 2850 50  0001 C CNN
+	1    5200 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C1
+U 1 1 6100F69E
+P 4900 2550
+F 0 "C1" V 4648 2550 50  0000 C CNN
+F 1 "4n7" V 4739 2550 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 4938 2400 50  0001 C CNN
+F 3 "~" H 4900 2550 50  0001 C CNN
+	1    4900 2550
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR0133
+U 1 1 6100FCB6
+P 4600 3000
+F 0 "#PWR0133" H 4600 2750 50  0001 C CNN
+F 1 "GND" H 4605 2827 50  0000 C CNN
+F 2 "" H 4600 3000 50  0001 C CNN
+F 3 "" H 4600 3000 50  0001 C CNN
+	1    4600 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0134
+U 1 1 61010CB1
+P 5200 3000
+F 0 "#PWR0134" H 5200 2750 50  0001 C CNN
+F 1 "GND" H 5205 2827 50  0000 C CNN
+F 2 "" H 5200 3000 50  0001 C CNN
+F 3 "" H 5200 3000 50  0001 C CNN
+	1    5200 3000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4600 2700 4600 2550
+Wire Wire Line
+	4600 2550 4750 2550
+Wire Wire Line
+	5050 2550 5200 2550
+Wire Wire Line
+	5200 2550 5200 2700
+Wire Wire Line
+	5900 2750 5800 2750
+Wire Wire Line
+	5800 2750 5800 3050
+Wire Wire Line
+	5800 3050 6650 3050
+Wire Wire Line
+	6650 3050 6650 2650
+Wire Wire Line
+	6650 2650 6500 2650
+Wire Wire Line
+	5900 2550 5200 2550
+Connection ~ 5200 2550
+$Comp
+L Device:R R3
+U 1 1 6101F080
+P 4600 4400
+F 0 "R3" H 4670 4446 50  0000 L CNN
+F 1 "2M2" H 4670 4355 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 4530 4400 50  0001 C CNN
+F 3 "~" H 4600 4400 50  0001 C CNN
+	1    4600 4400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R4
+U 1 1 6101F086
+P 5200 4400
+F 0 "R4" H 5270 4446 50  0000 L CNN
+F 1 "2M2" H 5270 4355 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 5130 4400 50  0001 C CNN
+F 3 "~" H 5200 4400 50  0001 C CNN
+	1    5200 4400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C2
+U 1 1 6101F08C
+P 4900 4100
+F 0 "C2" V 4648 4100 50  0000 C CNN
+F 1 "4n7" V 4739 4100 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 4938 3950 50  0001 C CNN
+F 3 "~" H 4900 4100 50  0001 C CNN
+	1    4900 4100
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR0135
+U 1 1 6101F092
+P 4600 4550
+F 0 "#PWR0135" H 4600 4300 50  0001 C CNN
+F 1 "GND" H 4605 4377 50  0000 C CNN
+F 2 "" H 4600 4550 50  0001 C CNN
+F 3 "" H 4600 4550 50  0001 C CNN
+	1    4600 4550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0136
+U 1 1 6101F098
+P 5200 4550
+F 0 "#PWR0136" H 5200 4300 50  0001 C CNN
+F 1 "GND" H 5205 4377 50  0000 C CNN
+F 2 "" H 5200 4550 50  0001 C CNN
+F 3 "" H 5200 4550 50  0001 C CNN
+	1    5200 4550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4600 4250 4600 4100
+Wire Wire Line
+	4600 4100 4750 4100
+Wire Wire Line
+	5050 4100 5200 4100
+Wire Wire Line
+	5200 4100 5200 4250
+Wire Wire Line
+	5900 4300 5800 4300
+Wire Wire Line
+	5800 4300 5800 4600
+Wire Wire Line
+	5800 4600 6650 4600
+Wire Wire Line
+	6650 4600 6650 4200
+Wire Wire Line
+	6650 4200 6500 4200
+Wire Wire Line
+	5900 4100 5200 4100
+Connection ~ 5200 4100
+Text HLabel 4600 2550 0    50   Input ~ 0
+dry_in_A
+Text HLabel 4600 4100 0    50   Input ~ 0
+dry_in_B
+$Comp
+L Amplifier_Operational:TL074 U1
+U 2 1 615CE65B
+P 6200 2650
+F 0 "U1" H 6200 3017 50  0000 C CNN
+F 1 "TL074" H 6200 2926 50  0000 C CNN
+F 2 "Package_SO:TSSOP-14_4.4x5mm_P0.65mm" H 6150 2750 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/tl071.pdf" H 6250 2850 50  0001 C CNN
+	2    6200 2650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Amplifier_Operational:TL074 U1
+U 4 1 615D1E5E
+P 6200 4200
+F 0 "U1" H 6200 4567 50  0000 C CNN
+F 1 "TL074" H 6200 4476 50  0000 C CNN
+F 2 "Package_SO:TSSOP-14_4.4x5mm_P0.65mm" H 6150 4300 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/tl071.pdf" H 6250 4400 50  0001 C CNN
+	4    6200 4200
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC

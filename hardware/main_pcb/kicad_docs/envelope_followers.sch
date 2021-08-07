@@ -3,9 +3,9 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 6 12
+Sheet 8 11
 Title "Stereo Whooshy Sound"
-Date "2020-11-20"
+Date "2021-08-07"
 Rev "0"
 Comp ""
 Comment1 "creativecommons.org/licenses/by/4.0/"
@@ -13,48 +13,798 @@ Comment2 "License: CC by 4.0"
 Comment3 "Author: Jordan Aceto"
 Comment4 ""
 $EndDescr
+Text HLabel 1950 1650 0    50   Input ~ 0
+dry_A_in
+Wire Wire Line
+	2450 1850 2550 1850
 $Comp
-L Amplifier_Operational:MCP6002-xSN U3
-U 1 1 5FB93812
-P 2700 2400
-F 0 "U3" H 2700 2767 50  0000 C CNN
-F 1 "MCP6002-xSN" H 2700 2676 50  0000 C CNN
-F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 2700 2400 50  0001 C CNN
-F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/21733j.pdf" H 2700 2400 50  0001 C CNN
-	1    2700 2400
+L Device:C C44
+U 1 1 611A00D7
+P 5800 2000
+F 0 "C44" H 5915 2046 50  0000 L CNN
+F 1 "470n" H 5915 1955 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 5838 1850 50  0001 C CNN
+F 3 "~" H 5800 2000 50  0001 C CNN
+	1    5800 2000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6300 1850 6200 1850
+Wire Wire Line
+	5800 1650 5800 1850
+Wire Wire Line
+	5550 1650 5650 1650
+Wire Wire Line
+	5650 1650 5650 1400
+Wire Wire Line
+	5650 1400 5400 1400
+Wire Wire Line
+	5400 1400 5400 1500
+Connection ~ 5650 1650
+Wire Wire Line
+	5650 1650 5800 1650
+Text Notes 5300 1350 0    50   ~ 0
+Attack
+$Comp
+L Device:R R47
+U 1 1 611A00FA
+P 3900 2800
+F 0 "R47" H 3830 2754 50  0000 R CNN
+F 1 "1k2" H 3830 2845 50  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 3830 2800 50  0001 C CNN
+F 3 "~" H 3900 2800 50  0001 C CNN
+	1    3900 2800
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R_POT RV14
+U 1 1 611A0107
+P 4350 2300
+F 0 "RV14" V 4143 2300 50  0000 C CNN
+F 1 "100k trim" V 4234 2300 50  0000 C CNN
+F 2 "custom_footprints:bourns_3306F" H 4350 2300 50  0001 C CNN
+F 3 "~" H 4350 2300 50  0001 C CNN
+	1    4350 2300
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4500 2300 4750 2300
+Wire Wire Line
+	4750 1750 4750 2300
+Wire Wire Line
+	4200 2300 4100 2300
+Wire Wire Line
+	3900 1850 3900 2300
+Wire Wire Line
+	3900 2650 3900 2300
+Connection ~ 3900 2300
+Wire Wire Line
+	4100 2300 4100 2550
+Wire Wire Line
+	4100 2550 4350 2550
+Wire Wire Line
+	4350 2550 4350 2450
+Connection ~ 4100 2300
+Wire Wire Line
+	4100 2300 3900 2300
+Text Notes 4400 2450 0    50   ~ 0
+envelope A trim
+$Comp
+L Device:R R48
+U 1 1 611A0119
+P 8100 1650
+F 0 "R48" V 8000 1450 50  0000 C CNN
+F 1 "100k" V 8000 1650 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 8030 1650 50  0001 C CNN
+F 3 "~" H 8100 1650 50  0001 C CNN
+	1    8100 1650
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R49
+U 1 1 611A011F
+P 8100 1850
+F 0 "R49" V 8200 1650 50  0000 C CNN
+F 1 "100k" V 8200 1850 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 8030 1850 50  0001 C CNN
+F 3 "~" H 8100 1850 50  0001 C CNN
+	1    8100 1850
+	0    1    1    0   
+$EndComp
+Text Notes 6750 1300 0    79   ~ 0
+trim for approx.\nrange: [0v, +2v]
+Text Notes 9300 2600 0    50   ~ 0
+envelope\nlevel
+Connection ~ 9200 1750
+Wire Wire Line
+	9200 1300 9200 1750
+Wire Wire Line
+	9200 2200 9200 1750
+Wire Wire Line
+	8400 1850 8500 1850
+Connection ~ 8400 1850
+Wire Wire Line
+	8400 2200 8400 1850
+Wire Wire Line
+	8250 1850 8400 1850
+Wire Wire Line
+	9200 1300 8950 1300
+Wire Wire Line
+	9100 1750 9200 1750
+Connection ~ 8400 1650
+Wire Wire Line
+	8400 1300 8650 1300
+Wire Wire Line
+	8400 1650 8400 1300
+Wire Wire Line
+	8500 1650 8400 1650
+$Comp
+L Device:R R50
+U 1 1 611A013B
+P 8800 1300
+F 0 "R50" V 8593 1300 50  0000 C CNN
+F 1 "100k" V 8684 1300 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 8730 1300 50  0001 C CNN
+F 3 "~" H 8800 1300 50  0001 C CNN
+	1    8800 1300
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	9350 2350 9550 2350
+Text Notes 9400 2200 0    79   ~ 0
+approx. range: \n[0v, +2v]
+Text HLabel 9550 2350 2    50   Output ~ 0
+env_A
+$Comp
+L Device:R_POT_Dual_Separate RV4
+U 1 1 611A014B
+P 5400 1650
+F 0 "RV4" V 5285 1650 50  0000 C CNN
+F 1 "500k_dual" V 5194 1650 50  0000 C CNN
+F 2 "Potentiometer_THT:Potentiometer_Alpha_RD902F-40-00D_Dual_Vertical" H 5400 1650 50  0001 C CNN
+F 3 "~" H 5400 1650 50  0001 C CNN
+	1    5400 1650
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	8250 1650 8400 1650
+$Comp
+L Device:R_POT_Dual_Separate RV5
+U 1 1 611A0186
+P 9200 2350
+F 0 "RV5" H 9131 2304 50  0000 R CNN
+F 1 "10k_dual" H 9131 2395 50  0000 R CNN
+F 2 "Potentiometer_THT:Potentiometer_Alpha_RD902F-40-00D_Dual_Vertical" H 9200 2350 50  0001 C CNN
+F 3 "~" H 9200 2350 50  0001 C CNN
+	1    9200 2350
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	7950 1650 7850 1650
+Wire Wire Line
+	7850 1650 7850 1750
+Wire Wire Line
+	7850 1850 7950 1850
+Connection ~ 7850 1750
+Wire Wire Line
+	7850 1750 7850 1850
+$Comp
+L Switch:SW_DPDT_x2 SW4
+U 1 1 611A0192
+P 8400 2400
+F 0 "SW4" V 8400 1750 50  0000 L CNN
+F 1 "SW_DPDT_center_off" V 8500 1500 50  0000 L CNN
+F 2 "custom_footprints:DPDT_mini_toggle" H 8400 2400 50  0001 C CNN
+F 3 "~" H 8400 2400 50  0001 C CNN
+	1    8400 2400
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8300 2600 8300 2700
+Wire Wire Line
+	8300 2700 8500 2700
+Connection ~ 8500 2700
+Wire Wire Line
+	8500 2700 8500 2600
+Text Notes 7400 2950 0    50   ~ 0
+envelope mode switch:\n\nup-up\ndown-down\nup-down
+$Comp
+L power:GND #PWR0194
+U 1 1 61248FF4
+P 3900 2950
+F 0 "#PWR0194" H 3900 2700 50  0001 C CNN
+F 1 "GND" H 3905 2777 50  0000 C CNN
+F 2 "" H 3900 2950 50  0001 C CNN
+F 3 "" H 3900 2950 50  0001 C CNN
+	1    3900 2950
 	1    0    0    -1  
 $EndComp
 $Comp
-L Amplifier_Operational:MCP6002-xSN U3
-U 2 1 5FB948CB
-P 2750 3750
-F 0 "U3" H 2750 4117 50  0000 C CNN
-F 1 "MCP6002-xSN" H 2750 4026 50  0000 C CNN
-F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 2750 3750 50  0001 C CNN
-F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/21733j.pdf" H 2750 3750 50  0001 C CNN
-	2    2750 3750
+L power:GND #PWR0195
+U 1 1 6124A1CD
+P 5800 2150
+F 0 "#PWR0195" H 5800 1900 50  0001 C CNN
+F 1 "GND" H 5805 1977 50  0000 C CNN
+F 2 "" H 5800 2150 50  0001 C CNN
+F 3 "" H 5800 2150 50  0001 C CNN
+	1    5800 2150
 	1    0    0    -1  
 $EndComp
 $Comp
-L Amplifier_Operational:MCP6002-xSN U4
-U 1 1 5FB9583C
-P 5250 2400
-F 0 "U4" H 5250 2767 50  0000 C CNN
-F 1 "MCP6002-xSN" H 5250 2676 50  0000 C CNN
-F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 5250 2400 50  0001 C CNN
-F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/21733j.pdf" H 5250 2400 50  0001 C CNN
-	1    5250 2400
+L Amplifier_Operational:MCP6004 U2
+U 1 1 6124E1C7
+P 2850 1750
+F 0 "U2" H 3050 1900 50  0000 C CNN
+F 1 "MCP6004" H 3050 2000 50  0000 C CNN
+F 2 "Package_SO:TSSOP-14_4.4x5mm_P0.65mm" H 2800 1850 50  0001 C CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/21733j.pdf" H 2900 1950 50  0001 C CNN
+	1    2850 1750
+	1    0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR0196
+U 1 1 612541AC
+P 2450 1950
+F 0 "#PWR0196" H 2450 1700 50  0001 C CNN
+F 1 "GND" H 2455 1777 50  0000 C CNN
+F 2 "" H 2450 1950 50  0001 C CNN
+F 3 "" H 2450 1950 50  0001 C CNN
+	1    2450 1950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2450 1950 2450 1850
+Wire Wire Line
+	1950 1650 2050 1650
+Wire Wire Line
+	2350 1650 2450 1650
+Wire Wire Line
+	3450 1750 3550 1750
+Wire Wire Line
+	3550 1250 3000 1250
+Wire Wire Line
+	2700 1250 2450 1250
+Wire Wire Line
+	2450 1250 2450 1650
+Connection ~ 2450 1650
+Wire Wire Line
+	2450 1650 2550 1650
+$Comp
+L Amplifier_Operational:MCP6004 U2
+U 3 1 612769D9
+P 6600 1750
+F 0 "U2" H 6800 1900 50  0000 C CNN
+F 1 "MCP6004" H 6800 2000 50  0000 C CNN
+F 2 "Package_SO:TSSOP-14_4.4x5mm_P0.65mm" H 6550 1850 50  0001 C CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/21733j.pdf" H 6650 1950 50  0001 C CNN
+	3    6600 1750
 	1    0    0    -1  
 $EndComp
 $Comp
-L Amplifier_Operational:MCP6002-xSN U4
-U 2 1 5FB96A17
-P 5300 3550
-F 0 "U4" H 5300 3917 50  0000 C CNN
-F 1 "MCP6002-xSN" H 5300 3826 50  0000 C CNN
-F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 5300 3550 50  0001 C CNN
-F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/21733j.pdf" H 5300 3550 50  0001 C CNN
-	2    5300 3550
+L Amplifier_Operational:MCP6004 U2
+U 4 1 61277443
+P 8800 1750
+F 0 "U2" H 8950 1900 50  0000 C CNN
+F 1 "MCP6004" H 8950 2000 50  0000 C CNN
+F 2 "Package_SO:TSSOP-14_4.4x5mm_P0.65mm" H 8750 1850 50  0001 C CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/21733j.pdf" H 8850 1950 50  0001 C CNN
+	4    8800 1750
+	1    0    0    1   
+$EndComp
+$Comp
+L power:+1V0 #PWR0197
+U 1 1 612C9BDC
+P 8300 3100
+F 0 "#PWR0197" H 8300 2950 50  0001 C CNN
+F 1 "+1V0" H 8315 3273 50  0000 C CNN
+F 2 "" H 8300 3100 50  0001 C CNN
+F 3 "" H 8300 3100 50  0001 C CNN
+	1    8300 3100
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	8300 3100 8300 3200
+Wire Wire Line
+	8300 3200 8500 3200
+Wire Wire Line
+	8500 2700 8500 3200
+$Comp
+L power:+1V0 #PWR0198
+U 1 1 612CE2D5
+P 9000 2750
+F 0 "#PWR0198" H 9000 2600 50  0001 C CNN
+F 1 "+1V0" H 9015 2923 50  0000 C CNN
+F 2 "" H 9000 2750 50  0001 C CNN
+F 3 "" H 9000 2750 50  0001 C CNN
+	1    9000 2750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9000 2750 9000 2850
+Wire Wire Line
+	9000 2850 9200 2850
+Wire Wire Line
+	9200 2500 9200 2850
+$Comp
+L Device:R R45
+U 1 1 61261EC3
+P 3300 1750
+F 0 "R45" V 3093 1750 50  0000 C CNN
+F 1 "30k" V 3184 1750 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 3230 1750 50  0001 C CNN
+F 3 "~" H 3300 1750 50  0001 C CNN
+	1    3300 1750
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R44
+U 1 1 611A0074
+P 2850 1250
+F 0 "R44" V 2643 1250 50  0000 C CNN
+F 1 "10k" V 2734 1250 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 2780 1250 50  0001 C CNN
+F 3 "~" H 2850 1250 50  0001 C CNN
+	1    2850 1250
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R43
+U 1 1 611A0068
+P 2200 1650
+F 0 "R43" V 1993 1650 50  0000 C CNN
+F 1 "20k" V 2084 1650 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 2130 1650 50  0001 C CNN
+F 3 "~" H 2200 1650 50  0001 C CNN
+	1    2200 1650
+	0    1    1    0   
+$EndComp
+$Comp
+L Amplifier_Operational:MCP6004 U2
+U 2 1 610EC06B
+P 4350 1750
+F 0 "U2" H 4550 1900 50  0000 C CNN
+F 1 "MCP6004" H 4550 2000 50  0000 C CNN
+F 2 "Package_SO:TSSOP-14_4.4x5mm_P0.65mm" H 4300 1850 50  0001 C CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/21733j.pdf" H 4400 1950 50  0001 C CNN
+	2    4350 1750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3550 1250 3550 1650
+Wire Wire Line
+	4750 1750 4650 1750
+Wire Wire Line
+	4050 1850 3900 1850
+$Comp
+L Device:R R46
+U 1 1 6111226F
+P 5000 1650
+F 0 "R46" V 4793 1650 50  0000 C CNN
+F 1 "4k7" V 4884 1650 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 4930 1650 50  0001 C CNN
+F 3 "~" H 5000 1650 50  0001 C CNN
+	1    5000 1650
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5150 1650 5250 1650
+Wire Wire Line
+	4850 1650 4750 1650
+Wire Wire Line
+	4750 1650 4750 1750
+Text HLabel 1900 4650 0    50   Input ~ 0
+dry_B_in
+Text HLabel 9500 5350 2    50   Output ~ 0
+env_B
+Wire Wire Line
+	2400 4850 2500 4850
+$Comp
+L Device:C C45
+U 1 1 614D56DE
+P 5750 5000
+F 0 "C45" H 5865 5046 50  0000 L CNN
+F 1 "470n" H 5865 4955 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 5788 4850 50  0001 C CNN
+F 3 "~" H 5750 5000 50  0001 C CNN
+	1    5750 5000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5750 4650 5750 4850
+Wire Wire Line
+	5500 4650 5600 4650
+Wire Wire Line
+	5600 4650 5600 4400
+Wire Wire Line
+	5600 4400 5350 4400
+Wire Wire Line
+	5350 4400 5350 4500
+Connection ~ 5600 4650
+Wire Wire Line
+	5600 4650 5750 4650
+Text Notes 5250 4350 0    50   ~ 0
+Attack
+$Comp
+L Device:R R61
+U 1 1 614D56F0
+P 3850 5800
+F 0 "R61" H 3780 5754 50  0000 R CNN
+F 1 "1k2" H 3780 5845 50  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 3780 5800 50  0001 C CNN
+F 3 "~" H 3850 5800 50  0001 C CNN
+	1    3850 5800
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R_POT RV15
+U 1 1 614D56F6
+P 4300 5300
+F 0 "RV15" V 4093 5300 50  0000 C CNN
+F 1 "100k trim" V 4184 5300 50  0000 C CNN
+F 2 "custom_footprints:bourns_3306F" H 4300 5300 50  0001 C CNN
+F 3 "~" H 4300 5300 50  0001 C CNN
+	1    4300 5300
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4450 5300 4700 5300
+Wire Wire Line
+	4150 5300 4050 5300
+Wire Wire Line
+	3850 4850 3850 5300
+Wire Wire Line
+	3850 5650 3850 5300
+Connection ~ 3850 5300
+Wire Wire Line
+	4050 5300 4050 5550
+Wire Wire Line
+	4050 5550 4300 5550
+Wire Wire Line
+	4300 5550 4300 5450
+Connection ~ 4050 5300
+Wire Wire Line
+	4050 5300 3850 5300
+Text Notes 4350 5450 0    50   ~ 0
+envelope B trim
+$Comp
+L Device:R R62
+U 1 1 614D5708
+P 8050 4650
+F 0 "R62" V 7950 4450 50  0000 C CNN
+F 1 "100k" V 7950 4650 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 7980 4650 50  0001 C CNN
+F 3 "~" H 8050 4650 50  0001 C CNN
+	1    8050 4650
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R63
+U 1 1 614D570E
+P 8050 4850
+F 0 "R63" V 8150 4650 50  0000 C CNN
+F 1 "100k" V 8150 4850 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 7980 4850 50  0001 C CNN
+F 3 "~" H 8050 4850 50  0001 C CNN
+	1    8050 4850
+	0    1    1    0   
+$EndComp
+Text Notes 6700 4300 0    79   ~ 0
+trim for approx.\nrange: [0v, +2v]
+Text Notes 9250 5600 0    50   ~ 0
+envelope\nlevel
+Connection ~ 9150 4750
+Wire Wire Line
+	9150 4300 9150 4750
+Wire Wire Line
+	9150 5200 9150 4750
+Wire Wire Line
+	8350 4850 8450 4850
+Connection ~ 8350 4850
+Wire Wire Line
+	8350 5200 8350 4850
+Wire Wire Line
+	8200 4850 8350 4850
+Wire Wire Line
+	9150 4300 8900 4300
+Wire Wire Line
+	9050 4750 9150 4750
+Connection ~ 8350 4650
+Wire Wire Line
+	8350 4300 8600 4300
+Wire Wire Line
+	8350 4650 8350 4300
+Wire Wire Line
+	8450 4650 8350 4650
+$Comp
+L Device:R R64
+U 1 1 614D5723
+P 8750 4300
+F 0 "R64" V 8543 4300 50  0000 C CNN
+F 1 "100k" V 8634 4300 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 8680 4300 50  0001 C CNN
+F 3 "~" H 8750 4300 50  0001 C CNN
+	1    8750 4300
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	9300 5350 9500 5350
+Text Notes 9350 5200 0    79   ~ 0
+approx. range: \n[0v, +2v]
+$Comp
+L Device:R_POT_Dual_Separate RV4
+U 2 1 614D572C
+P 5350 4650
+F 0 "RV4" V 5235 4650 50  0000 C CNN
+F 1 "500k_dual" V 5144 4650 50  0000 C CNN
+F 2 "Potentiometer_THT:Potentiometer_Alpha_RD902F-40-00D_Dual_Vertical" H 5350 4650 50  0001 C CNN
+F 3 "~" H 5350 4650 50  0001 C CNN
+	2    5350 4650
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	8200 4650 8350 4650
+$Comp
+L Device:R_POT_Dual_Separate RV5
+U 2 1 614D5733
+P 9150 5350
+F 0 "RV5" H 9081 5304 50  0000 R CNN
+F 1 "10k_dual" H 9081 5395 50  0000 R CNN
+F 2 "Potentiometer_THT:Potentiometer_Alpha_RD902F-40-00D_Dual_Vertical" H 9150 5350 50  0001 C CNN
+F 3 "~" H 9150 5350 50  0001 C CNN
+	2    9150 5350
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	7900 4650 7800 4650
+Wire Wire Line
+	7800 4650 7800 4750
+Wire Wire Line
+	7800 4850 7900 4850
+Connection ~ 7800 4750
+Wire Wire Line
+	7800 4750 7800 4850
+$Comp
+L Switch:SW_DPDT_x2 SW4
+U 2 1 614D573F
+P 8350 5400
+F 0 "SW4" V 8350 4750 50  0000 L CNN
+F 1 "SW_DPDT_center_off" V 8450 4500 50  0000 L CNN
+F 2 "custom_footprints:DPDT_mini_toggle" H 8350 5400 50  0001 C CNN
+F 3 "~" H 8350 5400 50  0001 C CNN
+	2    8350 5400
+	0    1    1    0   
+$EndComp
+Text Notes 7350 5950 0    50   ~ 0
+envelope mode switch:\n\nup-up\ndown-down\nup-down
+$Comp
+L power:GND #PWR05
+U 1 1 614D5754
+P 3850 5950
+F 0 "#PWR05" H 3850 5700 50  0001 C CNN
+F 1 "GND" H 3855 5777 50  0000 C CNN
+F 2 "" H 3850 5950 50  0001 C CNN
+F 3 "" H 3850 5950 50  0001 C CNN
+	1    3850 5950
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR04
+U 1 1 614D575A
+P 5750 5150
+F 0 "#PWR04" H 5750 4900 50  0001 C CNN
+F 1 "GND" H 5755 4977 50  0000 C CNN
+F 2 "" H 5750 5150 50  0001 C CNN
+F 3 "" H 5750 5150 50  0001 C CNN
+	1    5750 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Amplifier_Operational:MCP6004 U3
+U 1 1 614D5760
+P 2800 4750
+F 0 "U3" H 3000 4900 50  0000 C CNN
+F 1 "MCP6004" H 3000 5000 50  0000 C CNN
+F 2 "Package_SO:TSSOP-14_4.4x5mm_P0.65mm" H 2750 4850 50  0001 C CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/21733j.pdf" H 2850 4950 50  0001 C CNN
+	1    2800 4750
+	1    0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR03
+U 1 1 614D5766
+P 2400 4950
+F 0 "#PWR03" H 2400 4700 50  0001 C CNN
+F 1 "GND" H 2405 4777 50  0000 C CNN
+F 2 "" H 2400 4950 50  0001 C CNN
+F 3 "" H 2400 4950 50  0001 C CNN
+	1    2400 4950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2400 4950 2400 4850
+Wire Wire Line
+	1900 4650 2000 4650
+Wire Wire Line
+	2300 4650 2400 4650
+Wire Wire Line
+	3400 4750 3500 4750
+Wire Wire Line
+	3500 4250 2950 4250
+Wire Wire Line
+	2650 4250 2400 4250
+Wire Wire Line
+	2400 4250 2400 4650
+Connection ~ 2400 4650
+Wire Wire Line
+	2400 4650 2500 4650
+$Comp
+L Amplifier_Operational:MCP6004 U3
+U 3 1 614D5775
+P 6550 4750
+F 0 "U3" H 6750 4900 50  0000 C CNN
+F 1 "MCP6004" H 6750 5000 50  0000 C CNN
+F 2 "Package_SO:TSSOP-14_4.4x5mm_P0.65mm" H 6500 4850 50  0001 C CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/21733j.pdf" H 6600 4950 50  0001 C CNN
+	3    6550 4750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Amplifier_Operational:MCP6004 U3
+U 4 1 614D577B
+P 8750 4750
+F 0 "U3" H 8900 4900 50  0000 C CNN
+F 1 "MCP6004" H 8900 5000 50  0000 C CNN
+F 2 "Package_SO:TSSOP-14_4.4x5mm_P0.65mm" H 8700 4850 50  0001 C CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/21733j.pdf" H 8800 4950 50  0001 C CNN
+	4    8750 4750
+	1    0    0    1   
+$EndComp
+$Comp
+L power:+1V0 #PWR06
+U 1 1 614D5781
+P 8250 6100
+F 0 "#PWR06" H 8250 5950 50  0001 C CNN
+F 1 "+1V0" H 8265 6273 50  0000 C CNN
+F 2 "" H 8250 6100 50  0001 C CNN
+F 3 "" H 8250 6100 50  0001 C CNN
+	1    8250 6100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8250 6100 8250 6200
+Wire Wire Line
+	8250 6200 8450 6200
+$Comp
+L power:+1V0 #PWR07
+U 1 1 614D578A
+P 8950 5750
+F 0 "#PWR07" H 8950 5600 50  0001 C CNN
+F 1 "+1V0" H 8965 5923 50  0000 C CNN
+F 2 "" H 8950 5750 50  0001 C CNN
+F 3 "" H 8950 5750 50  0001 C CNN
+	1    8950 5750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8950 5750 8950 5850
+Wire Wire Line
+	8950 5850 9150 5850
+Wire Wire Line
+	9150 5500 9150 5850
+$Comp
+L Device:R R59
+U 1 1 614D5793
+P 3250 4750
+F 0 "R59" V 3043 4750 50  0000 C CNN
+F 1 "30k" V 3134 4750 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 3180 4750 50  0001 C CNN
+F 3 "~" H 3250 4750 50  0001 C CNN
+	1    3250 4750
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R58
+U 1 1 614D5799
+P 2800 4250
+F 0 "R58" V 2593 4250 50  0000 C CNN
+F 1 "10k" V 2684 4250 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 2730 4250 50  0001 C CNN
+F 3 "~" H 2800 4250 50  0001 C CNN
+	1    2800 4250
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R57
+U 1 1 614D579F
+P 2150 4650
+F 0 "R57" V 1943 4650 50  0000 C CNN
+F 1 "20k" V 2034 4650 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 2080 4650 50  0001 C CNN
+F 3 "~" H 2150 4650 50  0001 C CNN
+	1    2150 4650
+	0    1    1    0   
+$EndComp
+$Comp
+L Amplifier_Operational:MCP6004 U3
+U 2 1 614D57A5
+P 4300 4750
+F 0 "U3" H 4500 4900 50  0000 C CNN
+F 1 "MCP6004" H 4500 5000 50  0000 C CNN
+F 2 "Package_SO:TSSOP-14_4.4x5mm_P0.65mm" H 4250 4850 50  0001 C CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/21733j.pdf" H 4350 4950 50  0001 C CNN
+	2    4300 4750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3500 4250 3500 4650
+$Comp
+L Device:R R60
+U 1 1 614D57B3
+P 4950 4650
+F 0 "R60" V 4743 4650 50  0000 C CNN
+F 1 "4k7" V 4834 4650 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 4880 4650 50  0001 C CNN
+F 3 "~" H 4950 4650 50  0001 C CNN
+	1    4950 4650
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5100 4650 5200 4650
+Wire Wire Line
+	4800 4650 4700 4650
+Wire Wire Line
+	8450 5600 8450 6200
+NoConn ~ 8250 5600
+Connection ~ 4750 1750
+Wire Wire Line
+	6900 1750 7000 1750
+Wire Wire Line
+	4050 1650 3550 1650
+Connection ~ 3550 1650
+Wire Wire Line
+	3550 1650 3550 1750
+Wire Wire Line
+	6300 1650 5800 1650
+Connection ~ 5800 1650
+Wire Wire Line
+	6200 1850 6200 2150
+Wire Wire Line
+	6200 2150 7000 2150
+Wire Wire Line
+	7000 2150 7000 1750
+Connection ~ 7000 1750
+Wire Wire Line
+	6850 4750 6950 4750
+Wire Wire Line
+	4700 4650 4700 4750
+Wire Wire Line
+	4600 4750 4700 4750
+Connection ~ 4700 4750
+Wire Wire Line
+	4700 4750 4700 5300
+Wire Wire Line
+	4000 4850 3850 4850
+Wire Wire Line
+	4000 4650 3500 4650
+Connection ~ 3500 4650
+Wire Wire Line
+	3500 4650 3500 4750
+Wire Wire Line
+	6250 4650 5750 4650
+Connection ~ 5750 4650
+Wire Wire Line
+	6250 4850 6150 4850
+Wire Wire Line
+	6150 4850 6150 5150
+Wire Wire Line
+	6150 5150 6950 5150
+Wire Wire Line
+	6950 5150 6950 4750
+Connection ~ 6950 4750
+Wire Wire Line
+	6950 4750 7800 4750
+Wire Wire Line
+	7000 1750 7850 1750
+Text Notes 4450 3750 0    157  ~ 0
+check the orientation\nof the trimpots, try to\nmake it so they turn up\nand down intuitively
 $EndSCHEMATC
