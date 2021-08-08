@@ -244,7 +244,7 @@ Wire Wire Line
 Connection ~ 6600 4100
 Text Notes 4700 4500 0    79   ~ 0
 range: [0v, +2v]
-Text Notes 4700 3700 0    79   ~ 0
+Text Notes 4400 3700 0    79   ~ 0
 range: [-5v, 0v]
 Text Notes 6200 1250 0    79   ~ 0
 range: [0v, +2v]
@@ -769,8 +769,10 @@ F 3 "~" H 6350 5300 50  0001 C CNN
 	1    6350 5300
 	0    1    1    0   
 $EndComp
-Text Notes 1850 6900 0    157  ~ 0
-check the orientation\nof the trimpots, try to\nmake it so they turn up\nand down intuitively
 Text Notes 8200 4550 0    157  ~ 0
 breadboard the scaler\ncircuits to make sure\nthere are no surprises
+Text Notes 1650 5100 0    50   ~ 0
+adjust such that +5v is developed\nacross an expression pedal connected\nvia the Tip-Ring-Sleeve jack.
+Text Notes 1700 6850 0    50   ~ 0
+adjust such that +5v is developed\nacross an expression pedal connected\nvia the Tip-Ring-Sleeve jack.
 $EndSCHEMATC

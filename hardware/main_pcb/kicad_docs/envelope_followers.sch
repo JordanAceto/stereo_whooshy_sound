@@ -805,6 +805,4 @@ Wire Wire Line
 	6950 4750 7800 4750
 Wire Wire Line
 	7000 1750 7850 1750
-Text Notes 4450 3750 0    157  ~ 0
-check the orientation\nof the trimpots, try to\nmake it so they turn up\nand down intuitively
 $EndSCHEMATC
