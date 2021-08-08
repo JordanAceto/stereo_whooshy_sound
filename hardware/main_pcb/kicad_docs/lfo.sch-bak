@@ -459,10 +459,10 @@ F 3 "" H 6150 3000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Analog_DAC:MCP4822 U11
+L Analog_DAC:MCP4822 U9
 U 1 1 610932B4
 P 8950 3650
-F 0 "U11" H 8650 4200 50  0000 C CNN
+F 0 "U9" H 8650 4200 50  0000 C CNN
 F 1 "MCP4822" H 8650 4100 50  0000 C CNN
 F 2 "Package_SO:TSSOP-8_3x3mm_P0.65mm" H 9750 3350 50  0001 C CNN
 F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/20002249B.pdf" H 9750 3350 50  0001 C CNN
@@ -611,10 +611,10 @@ Wire Wire Line
 Text Label 2100 6550 0    50   ~ 0
 lfo_inv_b_sw
 $Comp
-L MCU_ST_STM32L0:STM32L031F4Px U10
+L MCU_ST_STM32L0:STM32L031F4Px U8
 U 1 1 6111F64A
 P 6250 3850
-F 0 "U10" H 5800 4700 50  0000 C CNN
+F 0 "U8" H 5800 4700 50  0000 C CNN
 F 1 "STM32L031F4Px" H 5800 4550 50  0000 C CNN
 F 2 "Package_SO:TSSOP-20_4.4x6.5mm_P0.65mm" H 5850 3150 50  0001 R CNN
 F 3 "http://www.st.com/st-web-ui/static/active/en/resource/technical/document/datasheet/DM00140359.pdf" H 6250 3850 50  0001 C CNN

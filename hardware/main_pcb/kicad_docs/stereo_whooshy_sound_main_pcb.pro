@@ -1,4 +1,4 @@
-update=Sat 07 Aug 2021 01:58:28 PM EDT
+update=Sun 08 Aug 2021 12:23:58 PM EDT
 version=1
 last_client=kicad
 [general]
@@ -71,7 +71,7 @@ Name=GND_layer
 Type=1
 Enabled=1
 [pcbnew/Layer.In2.Cu]
-Name=Power_layer
+Name=Mixed_inner_layer
 Type=2
 Enabled=1
 [pcbnew/Layer.In3.Cu]
@@ -248,5 +248,5 @@ SubpartIdSeparator=0
 SubpartFirstId=65
 NetFmtName=
 SpiceAjustPassiveValues=0
-LabSize=197
+LabSize=50
 ERC_TestSimilarLabels=1
