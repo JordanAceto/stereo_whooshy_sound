@@ -224,7 +224,7 @@ Wire Wire Line
 Connection ~ 6600 4500
 Wire Wire Line
 	6600 4500 6600 4900
-Text Label 6200 3700 2    50   ~ 0
+Text Label 5900 3700 2    50   ~ 0
 manual_freq
 $Comp
 L Device:R R35
@@ -769,10 +769,10 @@ F 3 "~" H 6350 5300 50  0001 C CNN
 	1    6350 5300
 	0    1    1    0   
 $EndComp
-Text Notes 8200 4550 0    157  ~ 0
-breadboard the scaler\ncircuits to make sure\nthere are no surprises
 Text Notes 1650 5100 0    50   ~ 0
 adjust such that +5v is developed\nacross an expression pedal connected\nvia the Tip-Ring-Sleeve jack.
 Text Notes 1700 6850 0    50   ~ 0
 adjust such that +5v is developed\nacross an expression pedal connected\nvia the Tip-Ring-Sleeve jack.
+Wire Wire Line
+	5900 3700 6200 3700
 $EndSCHEMATC
