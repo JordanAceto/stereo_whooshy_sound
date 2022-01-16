@@ -1,38 +1,26 @@
-Quick thoughts:
+# Stereo Whooshy Sound
 
+## It's a stereo version of [this](https://github.com/JordanAceto/whooshy_sound)
 
-Put it in a 1590xx?
+- ### The interface is modeled after the Mu-Tron Bi-Phase with some additions.
 
+## [SCHEMATIC](https://github.com/JordanAceto/stereo_whooshy_sound/blob/master/hardware/main_pcb/construction_docs/stereo_whooshy_sound_schematic.pdf)
 
-Power supply is an issue, try the TDK thingy?
+## Work in progress, next steps:
+- build a pcb and evaluate the analog circuits
+- update the firmware for stereo operation
+- finish the front panel design (I'm pretty sure there are errors)
+### Front panel idea (not final)
+![front panel sketch](./pics/sws_fp_idea.png)
 
+## PCB for evaluation:
+![raw pcb](./pics/sws_pcb.JPG)
 
-Two ways to go with the controls:
-- As much analog as possible
-- Use a mux and digitize everything [this is looking like the way to go]
+## Status of the project:
 
-master controls:
-- manual freq
-- separation
-- resonance
-
-- needs: just some ADC channels
-
-envelope follower controls:
-- level
-- smooth [or maybe level A and level B controls?]
-- mode switch (3 or 4 position) [maybe alpha SR1712F series, investigate]
-
-LFO controls:
-- rate A
-- shape A
-- depth A
-
-- rate B
-- shape B
-- depth B
-
-- mode switch (3 position) [maybe alpha SR1712F series, investigate]
-- invert B switch
-
-- needs: microcontroller, 6 ADC channels, 3 digital inputs [maybe stm32g071kbt6?]
+Task | Status |
+---------|--------------|
+Schematic capture | &#9745;
+PCB layout | &#9745;
+Test build | &#9744;
+Safe to order boards| &#9744;
