@@ -7,12 +7,12 @@ namespace BSP::gpio
     // TODO: more initialization needed
 
     /** @brief constant for initializing the GPIO pins all at once */
-    static const uint32_t GPIO_MODER_INIT_CONSTANT = 0xEBFF99FFu;
+    static const uint32_t GPIO_MODER_INIT_CONSTANT = 0xEBFF9BFFu;
 
     void init()
     {
         // enable clock control for GPIO port A
-        RCC->IOPENR |= RCC_IOPENR_IOPAEN;
+        RCC->IOPENR |= RCC_IOPENR_IOPAEN | RCC_IOPENR_GPIOBEN | RCC_IOPENR_GPIOCEN;
 
         // set the pinmodes for all pins
         GPIOA->MODER = GPIO_MODER_INIT_CONSTANT;
