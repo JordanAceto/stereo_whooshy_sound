@@ -4,20 +4,69 @@
 
 namespace BSP::gpio
 {
-    // TODO: more initialization needed
+    static void enable_GPIO_clock_control(void);
 
-    /** @brief constant for initializing the GPIO pins all at once */
-    static const uint32_t GPIO_MODER_INIT_CONSTANT = 0xEBFF9BFFu;
+    static void set_switch_pins_to_input_pullup(void);
+
+    static void setup_spi_pins(void);
 
     void init()
     {
-        // enable clock control for GPIO port A
+        enable_GPIO_clock_control();
+        set_switch_pins_to_input_pullup();
+        setup_spi_pins();
+    }
+
+    bool getPinState(pin_t pin)
+    {
+        bool retval = 0;
+        switch (pin)
+        {
+        case pin_t::PA9:
+            retval = (GPIOA->IDR >> 9u) & 1u;
+            break;
+        case pin_t::PA10:
+            retval = (GPIOA->IDR >> 10u) & 1u;
+            break;
+        case pin_t::PC14:
+            retval = (GPIOC->IDR >> 14u) & 1u;
+            break;
+        }
+
+        return retval;
+    }
+
+    void enable_GPIO_clock_control(void)
+    {
         RCC->IOPENR |= RCC_IOPENR_IOPAEN | RCC_IOPENR_GPIOBEN | RCC_IOPENR_GPIOCEN;
+    }
 
-        // set the pinmodes for all pins
-        GPIOA->MODER = GPIO_MODER_INIT_CONSTANT;
+    void set_switch_pins_to_input_pullup(void)
+    {
+        // set pins to inputs
+        GPIOA->MODER &= ~GPIO_MODER_MODE9_Msk;
+        GPIOA->MODER &= ~GPIO_MODER_MODE10_Msk;
+        GPIOC->MODER &= ~GPIO_MODER_MODE14_Msk;
 
-        // write the SPI1 CS pin high
+        // enable pullups
+        GPIOA->PUPDR |= GPIO_PUPDR_PUPD9_0;
+        GPIOA->PUPDR |= GPIO_PUPDR_PUPD10_0;
+        GPIOC->PUPDR |= GPIO_PUPDR_PUPD14_0;
+    }
+
+    void setup_spi_pins(void)
+    {
+        // set spi SCK and MOSI to special function
+        GPIOA->MODER &= ~GPIO_MODER_MODE5_Msk;
+        GPIOA->MODER &= ~GPIO_MODER_MODE7_Msk;
+        GPIOA->MODER |= GPIO_MODER_MODE5_1;
+        GPIOA->MODER |= GPIO_MODER_MODE7_1;
+
+        // set spi CS pin to output
+        GPIOA->MODER &= ~GPIO_MODER_MODE6_Msk;
+        GPIOA->MODER |= GPIO_MODER_MODE6_0;
+
+        // write the CS pin high
         GPIOA->BSRR = GPIO_BSRR_BS_6;
     }
 }

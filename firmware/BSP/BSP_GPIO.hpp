@@ -29,4 +29,20 @@ namespace BSP::gpio
      * PC14 is an input pullup mapped to the invert B switch
      */
     void init(void);
+
+    /** @brief enumeration of the digital input pins. */
+    enum class pin_t
+    {
+        PA9,
+        PA10,
+        PC14
+    };
+
+    /**
+     * @brief Get the state of the given pin.
+     *
+     * @param pin the input pin to get
+     * @return bool 1 if the pin is high, else 0
+     */
+    bool getPinState(pin_t pin);
 }
