@@ -9,9 +9,9 @@ namespace BSP::adc1
     /** @brief buffer for the raw converted values, filled via DMA */
     static volatile uint16_t raw_input[BSP::adc1::NUM_INPUTS];
 
-    uint32_t* getPtrToRawInputArray(void)
+    uint32_t *getPtrToRawInputArray(void)
     {
-        return (uint32_t*)raw_input;
+        return (uint32_t *)raw_input;
     }
 
     void init()
@@ -51,7 +51,7 @@ namespace BSP::adc1
         ADC1->CR |= ADC_CR_ADSTART;
     }
 
-    uint16_t getInput(Raw_Input input_type)
+    uint16_t getInput(pin_t input_type)
     {
         return raw_input[input_type];
     }

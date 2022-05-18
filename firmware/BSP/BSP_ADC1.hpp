@@ -12,16 +12,18 @@ namespace BSP::adc1
     /** @brief the maximum value of the signals converted by the ADC */
     const int FULL_SCALE = (1 << NUM_BITS) - 1;
 
-    /** @brief enumeration of the ADC input channels */
-    enum Raw_Input
+    /** @brief enumeration of the ADC input channels.
+     * The order of the channels is based on the PCB layout.
+     * */
+    enum pin_t
     {
-        LFO_A_LEVEL,
-        LFO_A_FREQ,
-        LFO_A_SHAPE,
+        PB1,
+        PA0,
+        PA1,
 
-        LFO_B_LEVEL,
-        LFO_B_FREQ,
-        LFO_B_SHAPE,
+        PA2,
+        PA3,
+        PA4,
 
         NUM_INPUTS
     };
@@ -42,12 +44,12 @@ namespace BSP::adc1
      * @param input the input channel to get
      * @return uint16_t the converted analog value of the specified channel
      */
-    uint16_t getInput(Raw_Input input_type);
+    uint16_t getInput(pin_t input_type);
 
     /**
      * @brief Get a pointer to the raw input buffer, used only by the DMA controller.
      *
      * @return uint32_t* pointer to the buffer holding the analog conversions.
      */
-    uint32_t* getPtrToRawInputArray(void);
+    uint32_t *getPtrToRawInputArray(void);
 }
