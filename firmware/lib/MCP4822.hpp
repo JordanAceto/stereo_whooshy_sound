@@ -21,8 +21,8 @@ namespace MCP4822
     /**
      * @brief Write the given 12 bit value to the DAC.
      *
-     * @param value_ui12 the 12 bit value to write, bits above 12 will be ignored
+     * @param value_ui12 the 12 bit value to write
      * @param channel the enumerated channel to write to, A or B
      */
-    void write(uint16_t value_ui12, Channel channel);
+    void write(int value_ui12, Channel channel);
 }
