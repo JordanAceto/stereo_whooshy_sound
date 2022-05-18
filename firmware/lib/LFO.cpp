@@ -3,7 +3,7 @@
 #include "PRNG.hpp"
 #include "wave_scanner.hpp"
 
-LFO::LFO(uint32_t sample_rate) : sample_rate(sample_rate) {}
+LFO::LFO(uint32_t sample_rate_) : sample_rate(sample_rate_) {}
 
 void LFO::tick(void)
 {
@@ -36,9 +36,9 @@ void LFO::updateTuningWord(void)
      * Since the LFO frequency is measured in milli Hertz, this becomes
      * M = (2^N * f_out_mHz)/(f_c * 1000)
      *
-     * Note that the MAX_ACCUMULATOR value is actually equal to 2^N - 1, but this
-     * off-by-one does not meaningfully impact the calculation.
-    */
+     * Note that the ACCUMULATOR_FULL_SCALE value is actually equal to 2^N - 1,
+     * but this off-by-one does not meaningfully impact the calculation.
+     */
     const uint32_t two_to_the_N = ACCUMULATOR_FULL_SCALE;
     const uint32_t f_c = sample_rate;
     const uint32_t f_out_mHz = input[FREQ_mHz];
@@ -91,8 +91,7 @@ void LFO::updateSquare(void)
 void LFO::updateRandom(void)
 {
     // the LFO "feels" better if the random signal updates at twice the base frequency
-    const uint32_t double_time_accum = phase_accumulator << 2u;
-    static uint32_t last_double_time_accum;
+    const uint32_t double_time_accum = phase_accumulator << 1u;
 
     const bool accum_rolled_over = double_time_accum < last_double_time_accum;
 

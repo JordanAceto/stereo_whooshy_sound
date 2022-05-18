@@ -6,7 +6,6 @@
 class LFO
 {
 public:
-
     /** @brief the number of effective bits of output range used by the LFO */
     static const int OUTPUT_NUM_BITS = 12u;
 
@@ -42,7 +41,7 @@ public:
      *
      * @param sample_rate the sample rate for the LFO, in Hertz
      */
-    LFO(uint32_t sample_rate);
+    LFO(uint32_t sample_rate_);
 
     /**
      * @brief Tick the LFO.
@@ -76,6 +75,9 @@ private:
 
     /** @brief the phase accumulator, LFO is generated via DDS */
     uint32_t phase_accumulator;
+
+    /** @brief used in generating the random sample-and-hold output */
+    uint32_t last_double_time_accum;
 
     /** @brief the tuning word for the phase accumulator */
     uint32_t tuning_word;
