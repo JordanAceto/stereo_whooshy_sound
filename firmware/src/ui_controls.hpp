@@ -1,5 +1,7 @@
 #pragma once
 
+#include "debounced_switch.hpp"
+
 class UI
 {
 public:

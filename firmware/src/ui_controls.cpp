@@ -1,6 +1,5 @@
 #include "BSP_ADC1.hpp"
 #include "BSP_GPIO.hpp"
-#include "debounced_switch.hpp"
 #include "LFO.hpp"
 #include "MCP4822.hpp"
 #include "ui_controls.hpp"
