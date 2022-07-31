@@ -1,20 +1,20 @@
 # Stereo Whooshy Sound
 
-## It's a stereo version of [this](https://github.com/JordanAceto/whooshy_sound)
-
-- ### The interface is modeled after the Mu-Tron Bi-Phase with some additions.
+## This pedal accommodates various VCF plug-in boards and contains rich modulation features.
+- The interface is loosely modeled after the Mu-Tron Bi-Phase with some additions.
+- Flexible signal path configurations are possible, including true stereo, dual-mono, and series setups.
 
 ## [SCHEMATIC](https://github.com/JordanAceto/stereo_whooshy_sound/blob/master/hardware/main_pcb/construction_docs/stereo_whooshy_sound_schematic.pdf)
 
-## Work in progress, next steps:
-- build a pcb and evaluate the analog circuits
-- update the firmware for stereo operation
-- finish the front panel design (I'm pretty sure there are errors)
-### Front panel idea (not final)
-![front panel sketch](./pics/sws_fp_idea.png)
+![](./pics/front_straight.JPG?raw=true "stereo whooshy sound pedal")
 
-## PCB for evaluation:
-![raw pcb](./pics/sws_pcb.JPG)
+### Features:
+- Guitar pedal style stomp box.
+- Can accept a wide variety of [filter plug-in boards](https://github.com/JordanAceto/VCF_plug_in_boards).
+- Manual frequency and resonance controls.
+- Dual digitally generated LFO with morphing waveshaper, smoothly crossfades from triangle to sine to square to sample & hold.
+- Analog envelope follower for when you want to quack and bwow instead of whoosh.
+- CV/expression pedal inputs for each filter.
 
 ## Status of the project:
 
@@ -22,5 +22,5 @@ Task | Status |
 ---------|--------------|
 Schematic capture | &#9745;
 PCB layout | &#9745;
-Test build | &#9744;
+Test build | &#9745;
 Safe to order boards| &#9744;
