@@ -1,0 +1,23 @@
+(kicad_sch (version 20211123) (generator eeschema)
+
+  (uuid 5d04cae0-214c-44d8-ab52-fca904d6068b)
+
+  (paper "A4")
+
+  (title_block
+    (title "Stereo Whooshy Sound")
+    (date "2021-08-07")
+    (rev "0")
+    (comment 1 "creativecommons.org/licenses/by/4.0/")
+    (comment 2 "License: CC by 4.0")
+    (comment 3 "Author: Jordan Aceto")
+  )
+
+  (lib_symbols
+  )
+
+
+  (sheet_instances
+    (path "/" (page "1"))
+  )
+)
